@@ -207,7 +207,7 @@ ion-infinite-scroll {
 
 // Pad top/bottom of content so it doesn't hide behind .bar-title and .bar-tab.
 // Note: For these to work, content must come after both bars in the markup
-/* If you change these, change platform.scss as well */
+/* If you change these, change platform.styles as well */
 .has-header {
   top: $bar-height;
 }
