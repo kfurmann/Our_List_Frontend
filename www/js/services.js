@@ -1,9 +1,9 @@
 angular.module('starter.services', [])
 
-    .factory('Chats', ['$http', function ($http) {
+    .factory('Tasks', ['$http', function ($http) {
         var chats = [];
-
         var promise = $http.post('http://localhost:3000/tasks', {'user_id': '557c93e8669e33dc14a5f924'});
+
         promise.success(function(data, status, headers, config){
             chats = data.data;
         });
@@ -15,7 +15,6 @@ angular.module('starter.services', [])
         return {
 
             requestPromise: promise,
-
             all: function () {
                 return chats;
             },
@@ -31,5 +30,17 @@ angular.module('starter.services', [])
                 return null;
             }
         };
+    }])
+    .factory('Users', ['$http', function($http){
+        var chats = [];
 
+        return {
+
+            find: function(name) {
+                return $http.post('http://localhost:3000/findUsersByName', {'name': name});
+            },
+            sendInvitation: function(user) {
+                return $http.post('http://localhost:3000/sendInvitationToUser', {'toUserId': user._id});
+            }
+        }
     }]);

@@ -42,7 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-list': {
           templateUrl: 'templates/tab-list.html',
-          controller: 'ChatsCtrl'
+          controller: 'TasksCtrl'
         }
       }
     })
