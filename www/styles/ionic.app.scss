@@ -24,3 +24,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
   min-height: unset;
 }
+
+.centered-block {
+  text-align: center;
+  display: block;
+}

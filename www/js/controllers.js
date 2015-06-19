@@ -1,5 +1,16 @@
 angular.module('starter.controllers', [])
 
+    .controller('LoginCtrl', ['$scope', 'Principal', function($scope, Principal){
+        Principal.identity().then(function(value){
+            console.log('principal verification ended' + value);
+            if(value === null){
+                // redirect to login page
+            }
+        });
+    }])
+    .controller('TabsCtrl', ['$scope', 'Principal', function($scope, Principal){
+
+    }])
     .controller('TasksCtrl', ['$scope', 'Tasks', function ($scope, Tasks) {
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -8,7 +19,7 @@ angular.module('starter.controllers', [])
         //
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-        Tasks.requestPromise.finally(function () {
+        Tasks.requestPromise().finally(function () {
             $scope.tasks = Tasks.all();
         });
 
